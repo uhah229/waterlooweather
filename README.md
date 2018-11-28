@@ -1,14 +1,18 @@
 # Waterloo Weather
 
-grabs waterloo weather from waterloo weather station using Python  
+grabs Waterloo weather from Waterloo Weather Station using Python  
 http://weather.uwaterloo.ca/
 
 # Requirements
+ - requests
  - BeautifulSoup
  - prettytable
 
-The script will try to install these packages with pip
+## Using pip
 
+```
+pip install requests beautifulsoup4 PrettyTable
+```
 # Usage
 run waterloweather.py  
 Example:
