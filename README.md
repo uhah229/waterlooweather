@@ -1,6 +1,6 @@
 # Waterloo Weather
 
-grabs waterloo weather from waterloo weather station using Python\s
+grabs waterloo weather from waterloo weather station using Python\s\s
 http://weather.uwaterloo.ca/
 
 # Requirements
@@ -10,7 +10,7 @@ http://weather.uwaterloo.ca/
 The script will try to install these packages with pip
 
 # Usage
-run waterloweather.py\s
+run waterloweather.py\s\s
 Example:
 ```
 +-----------------------------------+-------------------------+
