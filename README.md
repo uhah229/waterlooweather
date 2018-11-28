@@ -1,4 +1,4 @@
-# waterloo weather
+# Waterloo Weather
 
 grabs waterloo weather from waterloo weather station using Python
 http://weather.uwaterloo.ca/
