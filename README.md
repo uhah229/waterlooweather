@@ -3,7 +3,7 @@
 grabs Waterloo weather from Waterloo Weather Station using Python  
 http://weather.uwaterloo.ca/
 
-# Requirements
+## Requirements
  - requests
  - BeautifulSoup
  - prettytable
@@ -13,7 +13,7 @@ http://weather.uwaterloo.ca/
 ```
 pip install requests beautifulsoup4 PrettyTable
 ```
-# Usage
+## Usage
 run waterloweather.py  
 Example:
 ```
@@ -28,5 +28,24 @@ Example:
 |        Barometric Pressure        |   101.0  kPa   Steady   |
 |         Incoming Radiation        |        219.8 W/m2       |
 +-----------------------------------+-------------------------+
+```
+
+
+# Waterloo Download
+Downloads data from http://weather.uwaterloo.ca/ saves as csv file. Data is available from 1998.
+
+## Requirements
+ - Python3
+
+## Usage
+```
+usage: waterloodownload.py [-h] -f  [-l]
+
+script to download data from Waterloo Weather Station
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -f , --firstyear   starting year to download
+  -l , --lastyear    last year to download
 ```
 
