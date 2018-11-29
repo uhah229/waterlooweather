@@ -3,9 +3,16 @@ import argparse
 
 url = 'http://weather.uwaterloo.ca/download/1998_weather_station_data.csv'
 
-def getData(url):
-    file_name = url.split('/')[-1]
-    u = urllib.request.urlopen(url)
+def getData(yearurl,url):
+    file_name = yearurl.split('/')[-1]
+    try:
+        u = urllib.request.urlopen(yearurl)
+    except:
+        yearurl = url + 'Hobo_15minutedata_' + file_name[:4] + '.csv'
+        print(yearurl)
+        u = urllib.request.urlopen(yearurl)
+
+
     f = open(file_name, 'wb')
     meta = u.info()
     file_size = int(meta.get_all("Content-Length")[0])
@@ -33,7 +40,7 @@ def main(firstyear,lastyear):
         lastyear = firstyear
     for i in range(firstyear,lastyear+1):
         yearurl = url + str(i) + suffix
-        getData(yearurl)
+        getData(yearurl,url)
 
 
 
