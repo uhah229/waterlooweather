@@ -5,22 +5,22 @@ import argparse
 url = 'http://weather.uwaterloo.ca/download/1998_weather_station_data.csv'
 
 def getData(yearurl,url):
-    file_name = yearurl.split('/')[-1]
+    file_name   = yearurl.split('/')[-1]
     try:
-        u = urllib.request.urlopen(yearurl)
+        u       = urllib.request.urlopen(yearurl)
     except:
         yearurl = url + 'Hobo_15minutedata_' + file_name[:4] + '.csv'
-        print(yearurl)
-        u = urllib.request.urlopen(yearurl)
+        u       = urllib.request.urlopen(yearurl)
 
 
-    f = open(file_name, 'wb')
-    meta = u.info()
+    f         = open(file_name, 'wb')
+    meta      = u.info()
     file_size = int(meta.get_all("Content-Length")[0])
     print("Downloading: %s Bytes: %s" % (file_name, file_size))
 
     file_size_dl = 0
-    block_sz = 8192
+    block_sz     = 8192
+
     while True:
         buffer = u.read(block_sz)
         if not buffer:
@@ -37,14 +37,13 @@ def getData(yearurl,url):
 def main(firstyear,lastyear):
     url='http://weather.uwaterloo.ca/download/'
     suffix = '_weather_station_data.csv'
-    if lastyear == None:
-        lastyear = firstyear
+
+    if lastyear  == None:
+        lastyear  = firstyear
+
     for i in range(firstyear,lastyear+1):
         yearurl = url + str(i) + suffix
         getData(yearurl,url)
-
-
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=
